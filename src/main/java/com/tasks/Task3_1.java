@@ -23,12 +23,9 @@ public class Task3_1 {
     public static void main(String[] args) {
         Foo foo = new Foo();
 
-        Thread t1 = new Thread(foo::first);
-        Thread t2 = new Thread(foo::second);
-        Thread t3 = new Thread(foo::third);
-        t1.start();
-        t2.start();
-        t3.start();
+        new Thread(foo::first).start();
+        new Thread(foo::second).start();
+        new Thread(foo::third).start();
     }
 }
 

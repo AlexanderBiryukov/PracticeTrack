@@ -1,5 +1,7 @@
 package com.tasks;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -23,9 +25,14 @@ public class Task3_1 {
     public static void main(String[] args) {
         Foo foo = new Foo();
 
-        new Thread(foo::first).start();
-        new Thread(foo::second).start();
-        new Thread(foo::third).start();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+
+        executorService.submit(foo::first);
+        executorService.submit(foo::second);
+        executorService.submit(foo::third);
+
+        executorService.shutdown();
+
     }
 }
 

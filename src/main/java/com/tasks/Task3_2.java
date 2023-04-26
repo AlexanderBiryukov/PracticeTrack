@@ -12,9 +12,9 @@ public class Task3_2 {
         Runnable r3 = foo1::third;
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(3);
 
-        scheduledExecutorService.schedule(r1, 1, TimeUnit.SECONDS);
-        scheduledExecutorService.schedule(r2, 2, TimeUnit.SECONDS);
-        scheduledExecutorService.schedule(r3, 3, TimeUnit.SECONDS);
+        scheduledExecutorService.schedule(r1, 100, TimeUnit.MILLISECONDS);
+        scheduledExecutorService.schedule(r2, 200, TimeUnit.MILLISECONDS);
+        scheduledExecutorService.schedule(r3, 300, TimeUnit.MILLISECONDS);
         scheduledExecutorService.shutdown();
     }
 }
